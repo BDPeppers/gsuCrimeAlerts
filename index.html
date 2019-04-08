@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- ArcGIS stylesheet -->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/themes/light/main.css">
+
+    <!-- ArcGIS JS API -->
+    <script src="https://js.arcgis.com/4.11/"></script>
+
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/MapView"
+        ], function (Map, MapView) {
+
+            var map = new Map({
+                basemap: "streets-navigation-vector"
+            });
+
+            var view = new MapView({
+                container: "viewDiv",
+                map: map,
+                center: [-84.3853, 33.7531],
+                zoom: 30
+            });
+
+        });
+    </script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Custom JS -->
+    <script type="text/javascript" scr="index.js"></script>
+
+    <title>GSU Crime</title>
+</head>
+
+<body>
+    <header class="site-header">
+        GSU Crime Alerts
+    </header>
+
+    <!-- map container-->
+    <div class="map-container" id="viewDiv"></div>
+
+    <footer class="site-footer"></footer>
+
+</body>
+
+</html>

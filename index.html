@@ -7,22 +7,102 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
 
+    <!-- favicon -->
+    <link rel="icon" href="pics/logo.png">
+
     <!-- ArcGIS stylesheet -->
     <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/themes/light/main.css">
 
     <!-- ArcGIS JS API -->
     <script src="https://js.arcgis.com/4.11/"></script>
 
+    <!-- Custom JS -->
+    <script type="text/javascript" scr="index.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <title>GSU Crime</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>Georgia State University Crime Alerts</h1>
+        <div class="view">
+            <a href="#">3D view</a>
+            <a href="#">2D view</a>
+        </div>
+    </header>
+
+    <!-- map container-->
+    <div class="map-container" id="viewDiv"></div>
+
+    <footer class="site-footer">
+        <!-- Information -->
+        <!-- Emergency directory (link) -->
+        <!-- https://safety.gsu.edu/emergency-directory/ -->
+
+        <!-- include links to crime alert archive -->
+        <!-- https://safety.gsu.edu/category/crime-alerts/ -->
+
+        <!-- Recieve Emergency Information vis SMS (link) -->
+        <!-- https://www.getrave.com/TNCAcceptance.do?rst=JUFGMSVGQiUwNiVBOUQlQjklQ0QlOTglRjIlOTUlOUQlM0YlOEQlMDYlQzglNUIlOUMlQUElRjclN0MlMUIlM0QlMEMlQzAlMkJNJTlFJUUxJUJFUyVCMSVFOSVGQyVBNEUlODJNNCU4OSUyNCVCNCVDRCU2MCVCM3IlOTMlOUElM0MlN0RSJTVFJTVDJTBBJUU0JUQxJUI0JTE5JUI5R3lmJTAyJTA4JTFFJUY5JTIzJTBGbGolQTglMDMlQTYlRTAlOUZEJTVFJTI2ayVGQyUwMW8lQTAlM0YlMjElRjRXJUFCJUM5JUVBJUU2JTExJTk0aCU4QyVDRiVCRHclODkuJTJCWSVCOXZ6JURCJUU3JTE3JUU5SyVCQiVGOW41ZyUwMiU5MiVGMDZYJTdGJUM3JTEzQSUwNXElQTIlRTglODUlM0ElM0QlRkIlQjMlRUMlMjQlM0MlRkYqMCU4NSU5MSVENyU5N0dHJTkxJUQwJTk2JUZDJTI3JTk3cXklMkIlOTMlQzclQkElOEYlMjZvJURBMyUwMCVBNSVEMSVDRiU4RSVENSUzRSUwQSUxODklRjQlRDklQjElN0IlRUMlOTQlRjYlMjMlQjIlMUElRTQlQjglRjRJJTYwJTA0JUI5RSVEMSUwQyUwNFolODclMTElRkJiJThEJTE0aiUwNyUyOSVCRGslRDglQkIlMDZOJUI0JTE3JUU0JTE5JTNCJTBFJTI3JUJFJTg5eiVERiUzQSU4RCVFOSVEQ18lRUNMJUM1JUM0JTE5JTNBJUE3JUU3JTkwUCU4NiU1RSUxRiU4NUklMEElRUYlQUUlMEYlMjElOUNBJTA5JUZDJTE4JTBCJTk0JTAxJTlCJUIxJTIzJUExJUE1JTlCYyU4OSVCOCUyQ19mJTNGJTFDZTUlMUUuLSU5RSVCMCVBN1MlMTElMjElMDh5dyU3Q1klREFEcjglQUU= -->
+
+        <!-- Daily Police Reports (link) -->
+        <!-- http://listserv.gsu.edu/cgi-bin/wa?A0=SAFETY-HEALTH -->
+        <ul class="footer-info">
+            <h1>Stay Informed</h1>
+            <li class="info-link">Emergency Directory</li>
+            <li class="info-link">Crime Alert Archive</li>
+            <li class="info-link">Recieve Emergency Information via SMS</li>
+            <li class="info-link">Daily Police Reports</li>
+        </ul>
+
+        <!-- Contact -->
+        <!-- Safety Escorts and Non-Emergencies: 404 413 2100 -->
+        <!-- Hazadous Waste: 404 413 3540 -->
+        <!-- GSU Health Clinic: 404-413-1930 -->
+        <!-- University Housing: 404-413-1800 -->
+        <!-- GSU Police: 404 413 3213 police.gsu.edu -->
+        <!-- LiveSafe - a safety tool that provides a quick, convenient and discreet way to
+        communicate with Georgia State Police -->
+        <ul>
+            <h1>Contact</h1>
+            <div class="liveSafe">
+                <p>A safety tool that provides a quick, convenient and discreet way to communicate with Georgia State Police</p>
+                <img src="pics/LiveSafe.png">
+            </div>
+            <li class="contact-link">Safety Escorts and Non-Emergencies: 404 413 2100</li>
+            <li class="contact-link">Hazadous Waste: 404 413 3540</li>
+            <li class="contact-link">GSU Health Clinic: 404-413-1930</li>
+            <li class="contact-link">University Housing: 404-413-1800</li>
+            <li class="contact-link">GSU Police: 404 413 3213</li>
+            <li class="contact-link"></li>
+        </ul>
+        
+        <div>
+            <img src="pics/fire.png">
+        </div>
+
+
+    </footer>
+
+
     <script>
         require([
             "esri/Map",
-            "esri/views/MapView"
+            "esri/views/MapView",
+            "esri/Graphic",
+            "esri/geometry/Point",
+            "esri/symbols/SimpleMarkerSymbol"
         ], function (Map, MapView) {
 
             var map = new Map({
                 basemap: "streets-navigation-vector"
             });
-
             var view = new MapView({
                 container: "viewDiv",
                 map: map,
@@ -32,26 +112,6 @@
 
         });
     </script>
-
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Custom JS -->
-    <script type="text/javascript" scr="index.js"></script>
-
-    <title>GSU Crime</title>
-</head>
-
-<body>
-    <header class="site-header">
-        GSU Crime Alerts
-    </header>
-
-    <!-- map container-->
-    <div class="map-container" id="viewDiv"></div>
-
-    <footer class="site-footer"></footer>
-
 </body>
 
 </html>

@@ -1,0 +1,17 @@
+@import '../abstract/abstract'
+    
+header.site-header
+    div.view
+        @include flex(row)
+        width: 100%
+        justify-content: space-around
+        a
+            @include flex(row)
+            justify-content: center
+            padding: 1.5rem 0
+            width: 40%
+            background-color: $red
+            border-radius: 5%
+            //active color = red
+            //neutral color = gray
+            //select color = white - red words

@@ -29,69 +29,67 @@
 </head>
 
 <body>
+
     <header class="site-header">
-        <h1>Georgia State University Crime Alerts</h1>
-        <div class="view">
-            <a href="#">3D view</a>
-            <a href="#">2D view</a>
+        <div class="wrap">
+            <h1 class="gsuCrimeAlerts">Georgia State University Crime Alerts</h1>
+            <div class="view">
+                <button id="3d">3D view</button>
+                <button id="2d">2D view</button>
+
+            </div>
         </div>
     </header>
 
     <!-- map container-->
-    <div class="map-container" id="viewDiv"></div>
+    <div class="map-container">
+        <div class="map" id="viewDiv"></div>
+    </div>
 
     <footer class="site-footer">
-        <!-- Information -->
-        <!-- Emergency directory (link) -->
-        <!-- https://safety.gsu.edu/emergency-directory/ -->
+        <div class="wrap">
+            <!-- Information -->
+            <ul class="footer-info">
+                <h1 class="footer-header">Stay Informed</h1>
+                <!-- Emergency directory (link) -->
+                <li class="info-link"><a href="https://safety.gsu.edu/emergency-directory/">Emergency Directory</a></li>
+                <!-- include links to crime alert archive -->
+                <li class="info-link"><a href="https://safety.gsu.edu/category/crime-alerts/">Crime Alert Archive</a>
+                </li>
+                <!-- Recieve Emergency Information vis SMS (link) -->
+                <li class="info-link"><a href="https://www.getrave.com/login/gsu">Recieve Emergency Information via SMS</a></li>
+                <!-- Daily Police Reports (link) -->
+                <li class="info-link"><a href="http://listserv.gsu.edu/cgi-bin/wa?A0=SAFETY-HEALTH">Daily Police
+                        Reports</a>
+                </li>
+                <div>
+                    <img class="fire" src="pics/fire.png">
+                </div>
+            </ul>
 
-        <!-- include links to crime alert archive -->
-        <!-- https://safety.gsu.edu/category/crime-alerts/ -->
-
-        <!-- Recieve Emergency Information vis SMS (link) -->
-        <!-- https://www.getrave.com/TNCAcceptance.do?rst=JUFGMSVGQiUwNiVBOUQlQjklQ0QlOTglRjIlOTUlOUQlM0YlOEQlMDYlQzglNUIlOUMlQUElRjclN0MlMUIlM0QlMEMlQzAlMkJNJTlFJUUxJUJFUyVCMSVFOSVGQyVBNEUlODJNNCU4OSUyNCVCNCVDRCU2MCVCM3IlOTMlOUElM0MlN0RSJTVFJTVDJTBBJUU0JUQxJUI0JTE5JUI5R3lmJTAyJTA4JTFFJUY5JTIzJTBGbGolQTglMDMlQTYlRTAlOUZEJTVFJTI2ayVGQyUwMW8lQTAlM0YlMjElRjRXJUFCJUM5JUVBJUU2JTExJTk0aCU4QyVDRiVCRHclODkuJTJCWSVCOXZ6JURCJUU3JTE3JUU5SyVCQiVGOW41ZyUwMiU5MiVGMDZYJTdGJUM3JTEzQSUwNXElQTIlRTglODUlM0ElM0QlRkIlQjMlRUMlMjQlM0MlRkYqMCU4NSU5MSVENyU5N0dHJTkxJUQwJTk2JUZDJTI3JTk3cXklMkIlOTMlQzclQkElOEYlMjZvJURBMyUwMCVBNSVEMSVDRiU4RSVENSUzRSUwQSUxODklRjQlRDklQjElN0IlRUMlOTQlRjYlMjMlQjIlMUElRTQlQjglRjRJJTYwJTA0JUI5RSVEMSUwQyUwNFolODclMTElRkJiJThEJTE0aiUwNyUyOSVCRGslRDglQkIlMDZOJUI0JTE3JUU0JTE5JTNCJTBFJTI3JUJFJTg5eiVERiUzQSU4RCVFOSVEQ18lRUNMJUM1JUM0JTE5JTNBJUE3JUU3JTkwUCU4NiU1RSUxRiU4NUklMEElRUYlQUUlMEYlMjElOUNBJTA5JUZDJTE4JTBCJTk0JTAxJTlCJUIxJTIzJUExJUE1JTlCYyU4OSVCOCUyQ19mJTNGJTFDZTUlMUUuLSU5RSVCMCVBN1MlMTElMjElMDh5dyU3Q1klREFEcjglQUU= -->
-
-        <!-- Daily Police Reports (link) -->
-        <!-- http://listserv.gsu.edu/cgi-bin/wa?A0=SAFETY-HEALTH -->
-        <ul class="footer-info">
-            <h1>Stay Informed</h1>
-            <li class="info-link">Emergency Directory</li>
-            <li class="info-link">Crime Alert Archive</li>
-            <li class="info-link">Recieve Emergency Information via SMS</li>
-            <li class="info-link">Daily Police Reports</li>
-        </ul>
-
-        <!-- Contact -->
-        <!-- Safety Escorts and Non-Emergencies: 404 413 2100 -->
-        <!-- Hazadous Waste: 404 413 3540 -->
-        <!-- GSU Health Clinic: 404-413-1930 -->
-        <!-- University Housing: 404-413-1800 -->
-        <!-- GSU Police: 404 413 3213 police.gsu.edu -->
-        <!-- LiveSafe - a safety tool that provides a quick, convenient and discreet way to
-        communicate with Georgia State Police -->
-        <ul>
-            <h1>Contact</h1>
-            <div class="liveSafe">
-                <p>A safety tool that provides a quick, convenient and discreet way to communicate with Georgia State Police</p>
-                <img src="pics/LiveSafe.png">
-            </div>
-            <li class="contact-link">Safety Escorts and Non-Emergencies: 404 413 2100</li>
-            <li class="contact-link">Hazadous Waste: 404 413 3540</li>
-            <li class="contact-link">GSU Health Clinic: 404-413-1930</li>
-            <li class="contact-link">University Housing: 404-413-1800</li>
-            <li class="contact-link">GSU Police: 404 413 3213</li>
-            <li class="contact-link"></li>
-        </ul>
-        
-        <div>
-            <img src="pics/fire.png">
+            <!-- Contact -->
+            <ul class="footer-contact">
+                <h1 class="footer-header">Contact</h1>
+                <div class="liveSafe">
+                    <p>LiveSafe is a safety tool that provides a quick, convenient and discreet way to communicate with
+                        Georgia State
+                        Police</p>
+                    <a href="https://safety.gsu.edu/livesafe/"><img class="liveSafe" src="pics/LiveSafe.png"></a>
+                </div>
+                <li class="contact-link"><span>Escorts and Non-Emergencies:</span>404 413 2100</li>
+                <li class="contact-link"><span>Hazadous Waste:</span> 404 413 3540</li>
+                <li class="contact-link"><span>GSU Health Clinic:</span> 404 413 1930</li>
+                <li class="contact-link"><span>University Housing:</span> 404 413 1800</li>
+                <li class="contact-link"><span>GSU Police:</span> 404 413 3213</li>
+                
+            </ul>
         </div>
 
 
     </footer>
 
 
-    <script>
+    <script type="module">
         require([
             "esri/Map",
             "esri/views/MapView",
@@ -103,7 +101,7 @@
             var map = new Map({
                 basemap: "streets-navigation-vector"
             });
-            var view = new MapView({
+            var TwoD = new MapView({
                 container: "viewDiv",
                 map: map,
                 center: [-84.3853, 33.7531],
@@ -111,7 +109,10 @@
             });
 
         });
+
+        // export {map, TwoD}
     </script>
+
 </body>
 
 </html>

@@ -1,14 +1,8 @@
 @import '../abstract/abstract'
     
 html, body
-    margin: 0
-    padding: 0
+    @include no
     overflow-x: hidden
-
-h1,h2,h3,h4,h5,h6,p,div,li,a
-    font-family: 'Lato', sans-serif
-    color: $white
-    font-weight: 400
 
 header, footer
     display: flex
@@ -16,22 +10,8 @@ header, footer
     align-items: center
     background-color: $blue
 
-footer
-    ul
-        @include flex(column)
-        list-style: none
-        justify-content: center
-        text-align: center
-        padding: 0
-        margin: 0
-        
-        li
-            padding: 1rem 0
-
-    div
-        width: 100%
-        @include flex(column)
-        align-items: center
-        img
-            width: 10%
-            height: 10%
+div.wrap
+    max-width: $laptop
+    @include flex(row)
+    flex-wrap: wrap
+    height: 100%

@@ -16,9 +16,6 @@
     <!-- ArcGIS JS API -->
     <script src="https://js.arcgis.com/4.11/"></script>
 
-    <!-- Custom JS -->
-    <script type="text/javascript" scr="index.js"></script>
-
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -36,7 +33,6 @@
             <div class="view">
                 <button id="3d">3D view</button>
                 <button id="2d">2D view</button>
-
             </div>
         </div>
     </header>
@@ -44,6 +40,8 @@
     <!-- map container-->
     <div class="map-container">
         <div class="map" id="viewDiv"></div>
+         <!-- Custom JS -->
+         <script src="js/index.js"></script>
     </div>
 
     <footer class="site-footer">
@@ -88,30 +86,8 @@
 
     </footer>
 
-
-    <script type="module">
-        require([
-            "esri/Map",
-            "esri/views/MapView",
-            "esri/Graphic",
-            "esri/geometry/Point",
-            "esri/symbols/SimpleMarkerSymbol"
-        ], function (Map, MapView) {
-
-            var map = new Map({
-                basemap: "streets-navigation-vector"
-            });
-            var TwoD = new MapView({
-                container: "viewDiv",
-                map: map,
-                center: [-84.3853, 33.7531],
-                zoom: 30
-            });
-
-        });
-
-        // export {map, TwoD}
-    </script>
+    
+    
 
 </body>
 

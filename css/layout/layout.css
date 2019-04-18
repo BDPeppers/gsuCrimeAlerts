@@ -35,7 +35,7 @@ footer {
 }
 footer div.wrap {
   justify-content: space-between;
-  padding: 1rem 0;
+  padding-bottom: 2rem;
 }
 footer ul {
   width: 40%;
@@ -54,8 +54,15 @@ footer ul li, footer ul p {
   text-align: center;
   width: 100%;
 }
-footer ul li {
+footer ul li.info-link {
+  padding: 2rem 0;
+}
+footer ul li.contact-link {
   padding: 1rem 0;
+}
+footer ul li.contact-link span {
+  display: table;
+  width: 100%;
 }
 footer ul.footer-info {
   align-items: flex-start;
@@ -92,6 +99,9 @@ footer div img.liveSafe {
     display: flex;
     flex-direction: column-reverse;
   }
+  footer ul {
+    width: 70%;
+  }
 }
 div.map-container {
   background-color: #d0d0d0;
@@ -101,6 +111,10 @@ div.map-container div.map {
   height: 80vh;
   max-width: 1024px;
   margin: auto;
+}
+div.map-container div.hide {
+  height: 0;
+  display: hidden;
 }
 
 html, body {

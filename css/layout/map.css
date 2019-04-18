@@ -7,5 +7,9 @@ div.map-container div.map {
   max-width: 1024px;
   margin: auto;
 }
+div.map-container div.hide {
+  height: 0;
+  display: hidden;
+}
 
 /*# sourceMappingURL=map.css.map */

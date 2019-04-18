@@ -82,7 +82,7 @@ footer {
 }
 footer div.wrap {
   justify-content: space-between;
-  padding: 2rem 0;
+  padding-bottom: 2rem;
 }
 footer ul {
   width: 40%;
@@ -158,6 +158,10 @@ div.map-container div.map {
   height: 80vh;
   max-width: 1024px;
   margin: auto;
+}
+div.map-container div.hide {
+  height: 0;
+  display: hidden;
 }
 
 html, body {
